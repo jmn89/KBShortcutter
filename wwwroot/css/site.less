@@ -6,14 +6,103 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     background-color: black !important;
 }
-.kb-module {
-    img {
-        height: 100%;
-        width: 100%;
-    }
-}
+#kb-module {
+    @dot-size: 8px;
+    @key-width: 50px;
+    @kb-curve: 10px;
+    @font-size: 8pt;
+    @grey: #57545B;
+    @black: #202129;
+    @pad: 4px;
 
-//
+    .kb { 
+      width: max-content;
+      background-color: @grey;
+      padding: @pad;
+      border-radius: @kb-curve;
+
+      .r {
+        height: @key-width;
+
+        #BS { width: @key-width * 3; }
+        #TB, #¬, #SHIFT, #CTRL { width: @key-width * 2; }
+        #CAPS { width: @key-width * 2.5; }
+        #SPACE { width: @key-width * 5; }
+
+        .key {
+          display: inline-block;
+          width: @key-width;
+          height: inherit;
+          font-size: @font-size;
+          background-color: @black;
+          border: (@pad/2) solid @grey;
+          border-radius: @kb-curve;
+
+          .empty { filter: brightness(0.3); }
+
+          .txt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            height: 37%;
+          }
+
+          .single {
+            margin: auto;
+            width: (@key-width / 5) * 3;
+            height: 25%;
+            border-radius: 42%;
+            background-color: yellow;
+          }
+
+          .rbgGroup {
+            height: 30%;
+
+            .dot-container {
+              height: 100%;
+              display: grid;
+              grid-template-rows: auto @dot-size;
+              grid-template-columns: auto @dot-size auto;
+            }
+
+            .dot {
+              height: @dot-size;
+              width: @dot-size;
+              grid-row-start: 2;
+              border-radius: 50%;
+              margin: 0 3px;
+            }
+            .dot.red {
+              grid-column-start: 1;
+              margin-left: auto;
+            }
+            .dot.green {
+              grid-column-start: 2;
+              margin: auto;
+            }
+            .dot.blue {
+              grid-column-start: 3;
+              margin-right: auto;
+            }
+          }
+        }
+      }
+
+      .r1 { 
+        height: (@key-width / 5) * 4;
+        .txt { font-size: (@font-size - 3pt) };
+      }
+      .r4 {
+        #¬ { width: @key-width * 1.5;}
+      }
+    }
+
+    .red {background-color: #ff3333;}
+    .blue {background-color: #0099ff;}
+    .green {background-color: #66ff33;}
+    .yellow {background-color: #ffff00;}
+}
 
 a.navbar-brand {
     white-space: normal;

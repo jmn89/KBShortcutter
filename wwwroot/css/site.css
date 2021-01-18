@@ -3,9 +3,104 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
   background-color: black !important;
 }
-.kb-module img {
+#kb-module .kb {
+  width: max-content;
+  background-color: #57545B;
+  padding: 4px;
+  border-radius: 10px;
+}
+#kb-module .kb .r {
+  height: 50px;
+}
+#kb-module .kb .r #BS {
+  width: 150px;
+}
+#kb-module .kb .r #TB,
+#kb-module .kb .r #¬,
+#kb-module .kb .r #SHIFT,
+#kb-module .kb .r #CTRL {
+  width: 100px;
+}
+#kb-module .kb .r #CAPS {
+  width: 125px;
+}
+#kb-module .kb .r #SPACE {
+  width: 250px;
+}
+#kb-module .kb .r .key {
+  display: inline-block;
+  width: 50px;
+  height: inherit;
+  font-size: 8pt;
+  background-color: #202129;
+  border: 2px solid #57545B;
+  border-radius: 10px;
+}
+#kb-module .kb .r .key .empty {
+  filter: brightness(0.3);
+}
+#kb-module .kb .r .key .txt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 37%;
+}
+#kb-module .kb .r .key .single {
+  margin: auto;
+  width: 30px;
+  height: 25%;
+  border-radius: 42%;
+  background-color: yellow;
+}
+#kb-module .kb .r .key .rbgGroup {
+  height: 30%;
+}
+#kb-module .kb .r .key .rbgGroup .dot-container {
   height: 100%;
-  width: 100%;
+  display: grid;
+  grid-template-rows: auto 8px;
+  grid-template-columns: auto 8px auto;
+}
+#kb-module .kb .r .key .rbgGroup .dot {
+  height: 8px;
+  width: 8px;
+  grid-row-start: 2;
+  border-radius: 50%;
+  margin: 0 3px;
+}
+#kb-module .kb .r .key .rbgGroup .dot.red {
+  grid-column-start: 1;
+  margin-left: auto;
+}
+#kb-module .kb .r .key .rbgGroup .dot.green {
+  grid-column-start: 2;
+  margin: auto;
+}
+#kb-module .kb .r .key .rbgGroup .dot.blue {
+  grid-column-start: 3;
+  margin-right: auto;
+}
+#kb-module .kb .r1 {
+  height: 40px;
+}
+#kb-module .kb .r1 .txt {
+  font-size: 5pt;
+}
+#kb-module .kb .r4 #¬ {
+  width: 75px;
+}
+#kb-module .red {
+  background-color: #ff3333;
+}
+#kb-module .blue {
+  background-color: #0099ff;
+}
+#kb-module .green {
+  background-color: #66ff33;
+}
+#kb-module .yellow {
+  background-color: #ffff00;
 }
 a.navbar-brand {
   white-space: normal;
